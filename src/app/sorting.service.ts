@@ -143,6 +143,62 @@ export class SortingService {
     }
   }
 
+  async selectionSort(array: number[], callback: (updatedArray: number[]) => void): Promise<void> {
+    const n = array.length;
+
+    for (let i = 0; i < n; i++) {
+      let minIndex = i;
+
+      for (let j = i + 1; j < n; j++) {
+        if (array[j] < array[minIndex]) {
+          minIndex = j;
+        }
+      }
+
+      if (minIndex !== i) {
+        [array[i], array[minIndex]] = [array[minIndex], array[i]];
+        callback([...array]);
+        await this.delay(25);
+      }
+    }
+  }
+
+  async heapSort(array: number[], callback: (updatedArray: number[]) => void): Promise<void> {
+    const n = array.length;
+
+    const heapify = async (array: number[], n: number, i: number) => {
+      let largest = i;
+      const left = 2 * i + 1;
+      const right = 2 * i + 2;
+
+      if (left < n && array[left] > array[largest]) {
+        largest = left;
+      }
+
+      if (right < n && array[right] > array[largest]) {
+        largest = right;
+      }
+
+      if (largest !== i) {
+        [array[i], array[largest]] = [array[largest], array[i]];
+        callback([...array]);
+        await this.delay(25);
+        await heapify(array, n, largest);
+      }
+    };
+
+    for (let i = Math.floor(n / 2) - 1; i >= 0; i--) {
+      await heapify(array, n, i);
+    }
+
+    for (let i = n - 1; i > 0; i--) {
+      [array[0], array[i]] = [array[i], array[0]];
+      callback([...array]);
+      await this.delay(25);
+      await heapify(array, i, 0);
+    }
+  }
+
   private delay(ms: number): Promise<void> {
     return new Promise(resolve => setTimeout(resolve, ms));
   }

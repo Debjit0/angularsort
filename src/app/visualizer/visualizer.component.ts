@@ -90,5 +90,23 @@ export class VisualizerComponent implements OnInit {
       this.sortingInProgress = false;
     });
   }
+
+  startSelectionSort(): void {
+    this.sortingInProgress = true;
+    this.sortingService.selectionSort(this.array, (updatedArray) => {
+      this.array = updatedArray;
+    }).then(() => {
+      this.sortingInProgress = false;
+    });
+  }
+
+  startHeapSort(): void {
+    this.sortingInProgress = true;
+    this.sortingService.heapSort(this.array, (updatedArray) => {
+      this.array = updatedArray;
+    }).then(() => {
+      this.sortingInProgress = false;
+    });
+  }
 }
 

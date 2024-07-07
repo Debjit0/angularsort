@@ -8,7 +8,7 @@
   
   .array-step {
     display: flex;
-    margin-right: 5px; 
+    margin-right: 5px;
   }
   
   .array-bar {
@@ -16,4 +16,6 @@
     background-color: blue; 
     margin: 0 2px; 
   }
+
+  
   
