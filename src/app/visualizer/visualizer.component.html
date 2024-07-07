@@ -1,0 +1,12 @@
+<div>
+    <button (click)="generateNewArray()">Generate New Array</button>
+    <button (click)="startBubbleSort()">Bubble Sort</button>
+    <button (click)="startMergeSort()">Merge Sort</button>
+    <button (click)="startQuickSort()">Quick Sort</button>
+
+  
+    <div class="array-container">
+      <div *ngFor="let num of array" class="array-bar" [style.height.px]="num"></div>
+    </div>
+</div>
+  
