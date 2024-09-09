@@ -202,4 +202,24 @@ export class SortingService {
   private delay(ms: number): Promise<void> {
     return new Promise(resolve => setTimeout(resolve, ms));
   }
+
+  // async bubbleSort(array: number[], callback: (updatedArray: number[]) => void): Promise<void> {
+  //   const n = array.length;
+  //   let swapped;
+  
+  //   do {
+  //     swapped = false;
+  //     for (let i = 0; i < n - 1; i++) {
+  //       if (array[i] > array[i + 1]) {
+  //         const temp = array[i];
+  //         array[i] = array[i + 1];
+  //         array[i + 1] = temp;
+  //         swapped = true;
+  //         callback([...array]);  // Update the UI for every step
+  //         await this.delay(25);  // Delay for UI update
+  //       }
+  //     }
+  //   } while (swapped);
+  // }
+  
 }

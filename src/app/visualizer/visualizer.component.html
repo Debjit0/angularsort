@@ -1,13 +1,20 @@
 <div>
-    <button (click)="generateNewArray()">Generate New Array</button>
-    <button (click)="startBubbleSort()">Bubble Sort</button>
-    <button (click)="startMergeSort()">Merge Sort</button>
-    <button (click)="startQuickSort()">Quick Sort</button>
-    <button (click)="startSelectionSort()">Selection Sort</button>
-    <button (click)="startHeapSort()">Heap Sort</button>
-  
-    <div class="array-container">
-      <div *ngFor="let num of array" class="array-bar" [style.height.px]="num"></div>
+  <button (click)="generateNewArray()">Generate New Array</button>
+  <button (click)="startBubbleSort()">Bubble Sort</button>
+  <button (click)="startMergeSort()">Merge Sort</button>
+  <button (click)="startQuickSort()">Quick Sort</button>
+  <button (click)="startSelectionSort()">Selection Sort</button>
+  <button (click)="startHeapSort()">Heap Sort</button>
+
+  <div class="array-container">
+    <div *ngFor="let num of array" class="array-bar-container">
+      <div class="array-bar" [style.height.px]="num" [style.background]="getGradientColor(num)"></div>
+      <p class="array-size">{{ num }}</p>
     </div>
-</div>
+  </div>
+
+  <div class="time-info">
+    <p><span>Time Taken:</span> {{ timeTaken }} ms</p>
+  </div>
   
+</div>

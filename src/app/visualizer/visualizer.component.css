@@ -1,21 +1,65 @@
 .array-container {
-    display: flex;
-    justify-content: center;
-    align-items: flex-end; 
-    height: 300px; 
-    margin-bottom: 20px;
-  }
-  
-  .array-step {
-    display: flex;
-    margin-right: 5px;
-  }
-  
-  .array-bar {
-    width: 20px; 
-    background-color: blue; 
-    margin: 0 2px; 
-  }
+  display: flex;
+  align-items: flex-end; /* Align bars to the bottom */
+  height: 300px; /* Set a height for the container */
+  margin-top: 20px;
+}
 
-  
-  
+.array-bar-container {
+  display: flex;
+  flex-direction: column; /* Arrange bar and label vertically */
+  align-items: center; /* Center align bars and labels */
+  margin: 0 2px; /* Add some spacing between bars */
+}
+
+.array-bar {
+  width: 20px; /* Adjust the width of each bar */
+  margin-bottom: 5px; /* Space between bar and label */
+  transition: height 0.2s ease; /* Smooth transition for height changes */
+}
+
+.array-size {
+  font-size: 12px; /* Adjust font size for the label */
+  color: #333; /* Text color */
+  margin: 0;
+}
+
+button {
+  background-color: #007bff; /* Primary button color */
+  color: #fff; /* Text color */
+  border: none; /* Remove border */
+  border-radius: 5px; /* Rounded corners */
+  padding: 10px 20px; /* Padding inside the button */
+  font-size: 16px; /* Font size */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: background-color 0.3s, transform 0.2s; /* Smooth transitions */
+  margin: 5px; /* Space between buttons */
+}
+
+button:hover {
+  background-color: #0056b3; /* Darker color on hover */
+  transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+button:active {
+  background-color: #004085; /* Even darker color when clicked */
+  transform: scale(1); /* Reset size when clicked */
+}
+
+button:focus {
+  outline: none; /* Remove outline */
+  box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.5); /* Add a focus ring */
+}
+
+.time-info {
+  font-family: 'Arial', sans-serif; /* Clean, modern font */
+  font-size: 18px; /* Slightly larger font size for readability */
+  color: #333; /* Dark color for text */
+  margin-top: 20px; /* Space above the text */
+  text-align: center; /* Center-align the text */
+}
+
+.time-info span {
+  font-weight: bold; /* Make the label bold */
+  color: #007bff; /* Primary color for the label */
+}
