@@ -63,3 +63,8 @@ button:focus {
   font-weight: bold; /* Make the label bold */
   color: #007bff; /* Primary color for the label */
 }
+
+.array-container{
+  display: flex;
+  position: relative;
+}
